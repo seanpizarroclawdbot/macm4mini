@@ -44,3 +44,50 @@ skip_global_compinit=1
 alias snap='sudo tmutil localsnapshot'
 alias snaplist='tmutil listlocalsnapshots /'
 alias snapdelete='sudo tmutil deletelocalsnapshots'
+
+# === Shell Enhancements ===
+
+# Eza (modern ls)
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -la --icons --group-directories-first'
+alias lt='eza --tree --icons --level=2'
+alias la='eza -a --icons --group-directories-first'
+
+# Better defaults
+alias cat='bat --style=plain 2>/dev/null || cat'
+alias grep='grep --color=auto'
+alias df='df -h'
+alias du='du -h'
+alias mkdir='mkdir -pv'
+
+# Git shortcuts
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline -10'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias proj='cd ~/Projects'
+
+# Zsh autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Zsh syntax highlighting (must be last plugin)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Fzf keybindings and completion
+source <(fzf --zsh)
+
+# Zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# Starship prompt (must be at end)
+eval "$(starship init zsh)"
