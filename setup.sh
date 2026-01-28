@@ -53,6 +53,33 @@ echo "Creating Projects folder..."
 mkdir -p ~/Projects
 touch ~/Projects/.metadata_never_index
 
+# 9. Shell enhancements
+echo "Installing shell tools..."
+brew install starship zsh-autosuggestions zsh-syntax-highlighting fzf zoxide eza bat
+
+# 10. Starship config
+echo "Installing starship config..."
+mkdir -p ~/.config
+cp starship.toml ~/.config/
+
+# 11. Terminals (optional)
+echo "Installing terminals..."
+brew install --cask iterm2 warp
+
+# 12. SSH config
+echo "Installing SSH config..."
+mkdir -p ~/.ssh
+cp ssh_config ~/.ssh/config
+chmod 600 ~/.ssh/config
+
 echo ""
 echo "=== Setup Complete ==="
-echo "Restart your terminal or run: source ~/.zshrc"
+echo ""
+echo "Next steps:"
+echo "1. Restart your terminal or run: source ~/.zshrc"
+echo "2. Generate SSH key: ssh-keygen -t ed25519 -C 'your-email'"
+echo "3. Add SSH key to GitHub: cat ~/.ssh/id_ed25519.pub"
+echo ""
+echo "Installed apps:"
+echo "- iTerm2: Better terminal"
+echo "- Warp: Modern AI terminal"
