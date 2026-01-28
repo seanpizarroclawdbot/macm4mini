@@ -39,3 +39,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Faster ZSH startup
 skip_global_compinit=1
+
+# Snapshot aliases (APFS/Time Machine)
+alias snap='sudo tmutil localsnapshot'
+alias snaplist='tmutil listlocalsnapshots /'
+alias snapdelete='sudo tmutil deletelocalsnapshots'
